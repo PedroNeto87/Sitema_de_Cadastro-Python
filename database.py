@@ -40,6 +40,7 @@ class Data_base:
         cursor = self.connection.cursor()
         try:
             cursor.execute(f"""INSERT INTO Empresas {campos_tabela} VALUES ({qntd})""", fullDataSet)
+            self.connection.commit()
             return ("OK")
         except:
             return ("Erro")

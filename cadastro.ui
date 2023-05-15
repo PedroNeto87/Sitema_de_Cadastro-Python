@@ -73,8 +73,11 @@ QLabel{
             </property>
             <item>
              <widget class="QLabel" name="label_3">
+              <property name="styleSheet">
+               <string notr="true">font: 87 14pt &quot;Bodoni MT Black&quot;;</string>
+              </property>
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Pedro_Neto&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Pedro Neto&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -165,7 +168,7 @@ QPushButton:hover{
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="btn_home">
+                 <widget class="QPushButton" name="btn_pg_home">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -189,7 +192,7 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_cadastrar">
+                 <widget class="QPushButton" name="btn_pg_cadastro">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -208,12 +211,12 @@ QPushButton:hover{
                    <string notr="true"/>
                   </property>
                   <property name="text">
-                   <string>Cadastrar</string>
+                   <string>Empresas</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_contatos">
+                 <widget class="QPushButton" name="btn_pg_contatos">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -237,7 +240,7 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_sobre">
+                 <widget class="QPushButton" name="btn_pg_sobre">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -280,7 +283,7 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>150</width>
+                 <width>182</width>
                  <height>391</height>
                 </rect>
                </property>
@@ -296,6 +299,9 @@ QPushButton:hover{
                 </property>
                 <item>
                  <widget class="QLabel" name="label_4">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: rgb(12, 12, 12);</string>
+                  </property>
                   <property name="text">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Usuário:&lt;/span&gt; Adminstrador&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sistema:&lt;/span&gt; Cadastro&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Status:&lt;/span&gt; Ativo&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Venc:&lt;/span&gt; 31/12/2999&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
@@ -409,7 +415,7 @@ QPushButton:hover{
                 </item>
                </layout>
               </widget>
-              <widget class="QWidget" name="pg_cadastrar">
+              <widget class="QWidget" name="pg_cadastro_empresa">
                <layout class="QVBoxLayout" name="verticalLayout_9">
                 <item>
                  <widget class="QTabWidget" name="tabWidget">
@@ -571,7 +577,7 @@ background-color: rgb(249, 249, 249);</string>
                      </widget>
                     </item>
                     <item alignment="Qt::AlignHCenter">
-                     <widget class="QPushButton" name="btn_cadastrar_2">
+                     <widget class="QPushButton" name="btn_cadastrar_empresa">
                       <property name="minimumSize">
                        <size>
                         <width>160</width>
@@ -938,7 +944,7 @@ background-color: rgb(65, 65, 65);</string>
             <item>
              <widget class="QLabel" name="label_2">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;© Pedro_Neto 2023&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:7pt;&quot;&gt;© Pedro_Neto 2023&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>

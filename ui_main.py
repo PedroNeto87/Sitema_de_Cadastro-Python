@@ -61,6 +61,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setContentsMargins(-1, -1, 0, -1)
         self.label_3 = QLabel(self.frame)
         self.label_3.setObjectName(u"label_3")
+        self.label_3.setStyleSheet(u"font: 87 14pt \"Bodoni MT Black\";")
 
         self.horizontalLayout_4.addWidget(self.label_3)
 
@@ -106,43 +107,43 @@ class Ui_MainWindow(object):
         self.verticalLayout_5 = QVBoxLayout(self.page)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.btn_home = QPushButton(self.page)
-        self.btn_home.setObjectName(u"btn_home")
-        self.btn_home.setMinimumSize(QSize(0, 30))
+        self.btn_pg_home = QPushButton(self.page)
+        self.btn_pg_home.setObjectName(u"btn_pg_home")
+        self.btn_pg_home.setMinimumSize(QSize(0, 30))
         font = QFont()
         font.setPointSize(11)
-        self.btn_home.setFont(font)
-        self.btn_home.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_home.setStyleSheet(u"")
+        self.btn_pg_home.setFont(font)
+        self.btn_pg_home.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_pg_home.setStyleSheet(u"")
 
-        self.verticalLayout_5.addWidget(self.btn_home)
+        self.verticalLayout_5.addWidget(self.btn_pg_home)
 
-        self.btn_cadastrar = QPushButton(self.page)
-        self.btn_cadastrar.setObjectName(u"btn_cadastrar")
-        self.btn_cadastrar.setMinimumSize(QSize(0, 30))
-        self.btn_cadastrar.setFont(font)
-        self.btn_cadastrar.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_cadastrar.setStyleSheet(u"")
+        self.btn_pg_cadastro = QPushButton(self.page)
+        self.btn_pg_cadastro.setObjectName(u"btn_pg_cadastro")
+        self.btn_pg_cadastro.setMinimumSize(QSize(0, 30))
+        self.btn_pg_cadastro.setFont(font)
+        self.btn_pg_cadastro.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_pg_cadastro.setStyleSheet(u"")
 
-        self.verticalLayout_5.addWidget(self.btn_cadastrar)
+        self.verticalLayout_5.addWidget(self.btn_pg_cadastro)
 
-        self.btn_contatos = QPushButton(self.page)
-        self.btn_contatos.setObjectName(u"btn_contatos")
-        self.btn_contatos.setMinimumSize(QSize(0, 30))
-        self.btn_contatos.setFont(font)
-        self.btn_contatos.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_contatos.setStyleSheet(u"")
+        self.btn_pg_contatos = QPushButton(self.page)
+        self.btn_pg_contatos.setObjectName(u"btn_pg_contatos")
+        self.btn_pg_contatos.setMinimumSize(QSize(0, 30))
+        self.btn_pg_contatos.setFont(font)
+        self.btn_pg_contatos.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_pg_contatos.setStyleSheet(u"")
 
-        self.verticalLayout_5.addWidget(self.btn_contatos)
+        self.verticalLayout_5.addWidget(self.btn_pg_contatos)
 
-        self.btn_sobre = QPushButton(self.page)
-        self.btn_sobre.setObjectName(u"btn_sobre")
-        self.btn_sobre.setMinimumSize(QSize(0, 30))
-        self.btn_sobre.setFont(font)
-        self.btn_sobre.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_sobre.setStyleSheet(u"")
+        self.btn_pg_sobre = QPushButton(self.page)
+        self.btn_pg_sobre.setObjectName(u"btn_pg_sobre")
+        self.btn_pg_sobre.setMinimumSize(QSize(0, 30))
+        self.btn_pg_sobre.setFont(font)
+        self.btn_pg_sobre.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_pg_sobre.setStyleSheet(u"")
 
-        self.verticalLayout_5.addWidget(self.btn_sobre)
+        self.verticalLayout_5.addWidget(self.btn_pg_sobre)
 
         self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -151,13 +152,14 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"Page 1")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 150, 391))
+        self.page_2.setGeometry(QRect(0, 0, 182, 391))
         self.verticalLayout_6 = QVBoxLayout(self.page_2)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(-1, -1, 0, -1)
         self.label_4 = QLabel(self.page_2)
         self.label_4.setObjectName(u"label_4")
+        self.label_4.setStyleSheet(u"background-color: rgb(12, 12, 12);")
 
         self.verticalLayout_6.addWidget(self.label_4)
 
@@ -228,11 +230,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.addWidget(self.logo)
 
         self.Pages.addWidget(self.pg_home)
-        self.pg_cadastrar = QWidget()
-        self.pg_cadastrar.setObjectName(u"pg_cadastrar")
-        self.verticalLayout_9 = QVBoxLayout(self.pg_cadastrar)
+        self.pg_cadastro_empresa = QWidget()
+        self.pg_cadastro_empresa.setObjectName(u"pg_cadastro_empresa")
+        self.verticalLayout_9 = QVBoxLayout(self.pg_cadastro_empresa)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.tabWidget = QTabWidget(self.pg_cadastrar)
+        self.tabWidget = QTabWidget(self.pg_cadastro_empresa)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
@@ -329,14 +331,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_12.addWidget(self.frame_4)
 
-        self.btn_cadastrar_2 = QPushButton(self.tab)
-        self.btn_cadastrar_2.setObjectName(u"btn_cadastrar_2")
-        self.btn_cadastrar_2.setMinimumSize(QSize(160, 30))
+        self.btn_cadastrar_empresa = QPushButton(self.tab)
+        self.btn_cadastrar_empresa.setObjectName(u"btn_cadastrar_empresa")
+        self.btn_cadastrar_empresa.setMinimumSize(QSize(160, 30))
         font1 = QFont()
         font1.setPointSize(12)
-        self.btn_cadastrar_2.setFont(font1)
-        self.btn_cadastrar_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_cadastrar_2.setStyleSheet(u"QPushButton{\n"
+        self.btn_cadastrar_empresa.setFont(font1)
+        self.btn_cadastrar_empresa.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cadastrar_empresa.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(243, 243, 243);\n"
 "	border-radius: 15px;\n"
 "}\n"
@@ -347,7 +349,7 @@ class Ui_MainWindow(object):
 "	border-radius: 15px;\n"
 "}")
 
-        self.verticalLayout_12.addWidget(self.btn_cadastrar_2, 0, Qt.AlignHCenter)
+        self.verticalLayout_12.addWidget(self.btn_cadastrar_empresa, 0, Qt.AlignHCenter)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -473,7 +475,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.tabWidget)
 
-        self.Pages.addWidget(self.pg_cadastrar)
+        self.Pages.addWidget(self.pg_cadastro_empresa)
         self.pg_contatos = QWidget()
         self.pg_contatos.setObjectName(u"pg_contatos")
         self.verticalLayout_14 = QVBoxLayout(self.pg_contatos)
@@ -571,11 +573,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:11pt;\">Pedro_Neto</span></p></body></html>", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_cadastrar.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
-        self.btn_contatos.setText(QCoreApplication.translate("MainWindow", u"Contatos", None))
-        self.btn_sobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:11pt;\">Pedro Neto</span></p></body></html>", None))
+        self.btn_pg_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
+        self.btn_pg_cadastro.setText(QCoreApplication.translate("MainWindow", u"Empresas", None))
+        self.btn_pg_contatos.setText(QCoreApplication.translate("MainWindow", u"Contatos", None))
+        self.btn_pg_sobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page), QCoreApplication.translate("MainWindow", u"Page 1", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Usu\u00e1rio:</span> Adminstrador</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Sistema:</span> Cadastro</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Status:</span> Ativo</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Venc:</span> 31/12/2999</p></body></html>", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_2), QCoreApplication.translate("MainWindow", u"Page 2", None))
@@ -594,7 +596,7 @@ class Ui_MainWindow(object):
         self.txt_telefone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.txt_email.setPlaceholderText(QCoreApplication.translate("MainWindow", u"E-mail", None))
         self.lbl_empresas.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">EMPRESAS</span></p></body></html>", None))
-        self.btn_cadastrar_2.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
+        self.btn_cadastrar_empresa.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Cadastro", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">EMPRESAS</span></p></body></html>", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
@@ -630,6 +632,6 @@ class Ui_MainWindow(object):
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/linkdin_nova.png\"/><a href=\"https://www.linkedin.com/in/pedro-ferreira-cunha-neto/\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">LinkedIn</span></a></p></body></html>", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Sobre</span></p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Este sistema faz consulta do CNPJ utilizando API da Receita Federal e faz o cadastro da empresa em um banco de dados SQLITE3.</span></p><p><span style=\" font-size:14pt;\">Objetivo desse sistema \u00e9 ensinar como utilizar Python e o QT para desenvolver aplica\u00e7\u00f5es modernas funcionais.</span></p></body></html>", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:11pt;\">\u00a9 Pedro_Neto 2023</span></p></body></html>", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:7pt;\">\u00a9 Pedro_Neto 2023</span></p></body></html>", None))
     # retranslateUi
 
