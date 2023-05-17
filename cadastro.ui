@@ -283,7 +283,7 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>182</width>
+                 <width>150</width>
                  <height>391</height>
                 </rect>
                </property>
@@ -636,7 +636,7 @@ background-color: rgb(249, 249, 249);</string>
                     <item>
                      <layout class="QHBoxLayout" name="horizontalLayout_5">
                       <item>
-                       <widget class="QTableWidget" name="tableWidget">
+                       <widget class="QTableWidget" name="tb_company">
                         <property name="styleSheet">
                          <string notr="true">QHeaderView::section{
 	background-color: rgb(148, 148, 148);
@@ -727,7 +727,7 @@ QFrame{
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_10">
                          <item>
-                          <widget class="QPushButton" name="btn_excel">
+                          <widget class="QPushButton" name="btn_excel_empresa">
                            <property name="minimumSize">
                             <size>
                              <width>90</width>
@@ -758,7 +758,7 @@ QFrame{
                           </widget>
                          </item>
                          <item>
-                          <widget class="QPushButton" name="btn_alterar">
+                          <widget class="QPushButton" name="btn_alterar_empresa">
                            <property name="minimumSize">
                             <size>
                              <width>90</width>
@@ -789,7 +789,7 @@ QFrame{
                           </widget>
                          </item>
                          <item>
-                          <widget class="QPushButton" name="btn_excluir">
+                          <widget class="QPushButton" name="btn_excluir_empresa">
                            <property name="minimumSize">
                             <size>
                              <width>90</width>

@@ -59,9 +59,9 @@ class Data_base:
         try:
             cursor.execute(f"""DELETE FROM Empresas WHERE CNPJ = '{id}'""")
             self.connection.commit()
-            return ("Cadastro realizado com sucesso!")
+            return ("Cadastro de empresa excluido com sucesso!")
         except:
-            return ("Erro a excluir registro!")
+            return ("Erro ao excluir registro!")
     
     def update_company(self, fullDataSet):
         cursor = self.connection.cursor()
@@ -73,10 +73,11 @@ class Data_base:
             COMPLEMENTO = '{fullDataSet[4]}',
             BAIRRO = '{fullDataSet[5]}',
             MUNICIPIO = '{fullDataSet[6]}',
-            UP = '{fullDataSet[7]}',
+            UF = '{fullDataSet[7]}',
             CEP = '{fullDataSet[8]}',
             TELEFONE = '{fullDataSet[9]}',
-            EMAIL = '{fullDataSet[10]}',
+            EMAIL = '{fullDataSet[10]}'
+            
             WHERE CNPJ = '{fullDataSet[0]}'
             """)
         self.connection.commit()

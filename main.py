@@ -1,7 +1,9 @@
 import sys
-from PySide6 import QtCore
+import pandas as pd
+import sqlite3
+from PySide6 import QtCore 
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox)
+from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTableWidgetItem)
 from ui_main import Ui_MainWindow
 from ui_functions import consulta_cnpj
 from database import Data_base
@@ -18,18 +20,32 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ##############################################
         #TOGGLE BUTTON
         self.btn_toggle.clicked.connect(self.menuAnimado)
-        ##############################################
+        #################################################
         #PAGINAS DO SISTEMA
         self.btn_pg_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
         self.btn_pg_cadastro.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_empresa))
         self.btn_pg_contatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contatos))
         self.btn_pg_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
-        ###########################################################################################
+        ####################################################################################################
         #PREENCHER AUTOMATICAMENTE OS DADOS DO CNPJ
         self.txt_cnpj.editingFinished.connect(self.consultar_api)
-        ######################################################
+        #########################################################
         #CADASTRAR EMPRESA
         self.btn_cadastrar_empresa.clicked.connect(self.cadastrar_empresa)
+        ##################################################################
+        #ATUALIZAR CADASTRO DE EMPRESAS
+        self.btn_alterar_empresa.clicked.connect(self.editar_empresas)
+        ######################################################
+        #EXCLUIR CADASTRO DE EMPRESAS
+        self.btn_excluir_empresa.clicked.connect(self.excluir_empresa)
+        ##############################################################
+        #GERAR ARQUIVO EXCEL DE EMPRESAS
+        self.btn_excel_empresa.clicked.connect(self.gerar_excel_interface)
+        self.btn_excel_empresa.clicked.connect(self.gerar_excel_banco)
+        ##################################################################
+        #PREENCHER A TABELA DE EMPRESAS
+        self.tabela_empresas()
+        ######################
 
     def menuAnimado(self):
         width = self.left_menu.width()
@@ -73,6 +89,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg.setWindowTitle('Cadastro realizado')
             msg.setText('Cadastro realizado com sucesso!')
             msg.exec()
+            self.tabela_empresas()
+            self.txt_cnpj.setText(''), self.txt_nome.setText(''), self.txt_logradouro.setText(''), self.txt_numero.setText(''), self.txt_complemento.setText(''), self.txt_bairro.setText(''), self.txt_municipio.setText(''), self.txt_uf.setText(''), self.txt_cep.setText(''), self.txt_telefone.setText(''), self.txt_email.setText('')
             db.close_connection()
             return
         else:
@@ -82,6 +100,105 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg.setText('Erro ao cadastrar, verifique se as informações foram preenchidas corretamente')
             msg.exec()
             db.close_connection()
+
+    def tabela_empresas(self):
+        db = Data_base()
+        db.connect()
+        resultado = db.select_all_campanies()
+
+        self.tb_company.clearContents()
+        self.tb_company.setRowCount(len(resultado))
+
+        for linha, texto in enumerate(resultado):
+            for coluna, dado in enumerate(texto):
+                self.tb_company.setItem(linha, coluna, QTableWidgetItem(str(dado)))
+        db.close_connection()
+
+    def editar_empresas(self):
+        dados = []
+        atualizar_dados = []
+
+        for linha in range(self.tb_company.rowCount()):
+            for coluna in range(self.tb_company.columnCount()):
+                dados.append(self.tb_company.item(linha, coluna).text())
+            
+            atualizar_dados.append(dados)
+            dados = []
+
+        #ATUALIZAR DADOS NO BANCO
+        db = Data_base()
+        db.connect()
+
+        for emp in atualizar_dados:
+            db.update_company(tuple(emp))
+
+        db.close_connection()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Atualização de Dados')
+        msg.setText('Dados atualizados com sucesso!')
+        msg.exec()
+
+    def excluir_empresa(self):
+        db = Data_base()
+        db.connect()
+
+        msg = QMessageBox()
+        msg.setWindowTitle('Excluir')
+        msg.setText('Este registro será excluído')
+        msg.setInformativeText('Você tem certeza que deseja excluir?')
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resp = msg.exec()
+
+        if resp == QMessageBox.Yes:
+            cnpj = self.tb_company.selectionModel().currentIndex().siblingAtColumn(0).data()
+            resultado = db.delete_company(cnpj)
+            self.tabela_empresas()
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle('Empresas')
+            msg.setText(resultado)
+            msg.exec()
+
+        db.close_connection()
+
+    def gerar_excel_interface(self):
+        #pip install openpyxl
+        #pip install pandas
+        dados = []
+        todos_dados = []
+
+        for linha in range(self.tb_company.rowCount()):
+            for coluna in range(self.tb_company.columnCount()):
+                dados.append(self.tb_company.item(linha, coluna).text())
+            todos_dados.append(dados)
+            dados = []
+
+        colunas = ['CNPJ', 'NOME', 'LOGRADOURO', 'NUMERO', 'COMPLEMENTO', 'BAIRRO', 'MUNICIPIO', 'UF', 'CEP', 'TELEFONE', 'EMAIL']
+        empresas = pd.DataFrame(todos_dados, columns=colunas)
+        empresas.to_excel('Empresas.xlsx', sheet_name='empresas', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Excel')
+        msg.setText('Relatório Excel gerado com sucesso!')
+        msg.exec()
+
+    def gerar_excel_banco(self):
+        #pip install openpyxl
+        #pip install pandas
+        #import sqlite3
+        cnx = sqlite3.connect('system.db')
+        empresas = pd.read_sql_query("""SELECT * FROM Empresas""", cnx)
+        empresas.to_excel('Empresas_.xlsx', sheet_name='empresas_', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Excel')
+        msg.setText('Relatório Excel gerado com sucesso!')
+        msg.exec()
 
 
 

@@ -152,7 +152,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"Page 1")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 182, 391))
+        self.page_2.setGeometry(QRect(0, 0, 150, 391))
         self.verticalLayout_6 = QVBoxLayout(self.page_2)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -366,33 +366,33 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5 = QHBoxLayout()
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.tableWidget = QTableWidget(self.tab_2)
-        if (self.tableWidget.columnCount() < 11):
-            self.tableWidget.setColumnCount(11)
+        self.tb_company = QTableWidget(self.tab_2)
+        if (self.tb_company.columnCount() < 11):
+            self.tb_company.setColumnCount(11)
         __qtablewidgetitem = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.tb_company.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.tb_company.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.tb_company.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        self.tb_company.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        self.tb_company.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         __qtablewidgetitem5 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        self.tb_company.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        self.tb_company.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(7, __qtablewidgetitem7)
+        self.tb_company.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(8, __qtablewidgetitem8)
+        self.tb_company.setHorizontalHeaderItem(8, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(9, __qtablewidgetitem9)
+        self.tb_company.setHorizontalHeaderItem(9, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
-        self.tableWidget.setHorizontalHeaderItem(10, __qtablewidgetitem10)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setStyleSheet(u"QHeaderView::section{\n"
+        self.tb_company.setHorizontalHeaderItem(10, __qtablewidgetitem10)
+        self.tb_company.setObjectName(u"tb_company")
+        self.tb_company.setStyleSheet(u"QHeaderView::section{\n"
 "	background-color: rgb(148, 148, 148);\n"
 "	color: rgb(255, 255, 255);\n"
 "	font: 10pt \"MS Shell Dig 2\";\n"
@@ -402,7 +402,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(252, 252, 252);\n"
 "}")
 
-        self.horizontalLayout_5.addWidget(self.tableWidget)
+        self.horizontalLayout_5.addWidget(self.tb_company)
 
         self.frame_3 = QFrame(self.tab_2)
         self.frame_3.setObjectName(u"frame_3")
@@ -420,46 +420,46 @@ class Ui_MainWindow(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.verticalLayout_10 = QVBoxLayout(self.frame_3)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.btn_excel = QPushButton(self.frame_3)
-        self.btn_excel.setObjectName(u"btn_excel")
-        self.btn_excel.setMinimumSize(QSize(90, 30))
+        self.btn_excel_empresa = QPushButton(self.frame_3)
+        self.btn_excel_empresa.setObjectName(u"btn_excel_empresa")
+        self.btn_excel_empresa.setMinimumSize(QSize(90, 30))
         font2 = QFont()
         font2.setFamilies([u"MS Shell Dig 2"])
         font2.setPointSize(11)
         font2.setBold(False)
         font2.setItalic(False)
-        self.btn_excel.setFont(font2)
-        self.btn_excel.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excel.setStyleSheet(u"QPushButton:hover{\n"
+        self.btn_excel_empresa.setFont(font2)
+        self.btn_excel_empresa.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_excel_empresa.setStyleSheet(u"QPushButton:hover{\n"
 "	background-color: rgb(49, 147, 0);\n"
 "	color: #fff;\n"
 "}")
 
-        self.verticalLayout_10.addWidget(self.btn_excel)
+        self.verticalLayout_10.addWidget(self.btn_excel_empresa)
 
-        self.btn_alterar = QPushButton(self.frame_3)
-        self.btn_alterar.setObjectName(u"btn_alterar")
-        self.btn_alterar.setMinimumSize(QSize(90, 30))
-        self.btn_alterar.setFont(font2)
-        self.btn_alterar.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar.setStyleSheet(u"QPushButton:hover{\n"
+        self.btn_alterar_empresa = QPushButton(self.frame_3)
+        self.btn_alterar_empresa.setObjectName(u"btn_alterar_empresa")
+        self.btn_alterar_empresa.setMinimumSize(QSize(90, 30))
+        self.btn_alterar_empresa.setFont(font2)
+        self.btn_alterar_empresa.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_empresa.setStyleSheet(u"QPushButton:hover{\n"
 "	background-color: rgb(255, 170, 0);\n"
 "	color: #fff;\n"
 "}")
 
-        self.verticalLayout_10.addWidget(self.btn_alterar)
+        self.verticalLayout_10.addWidget(self.btn_alterar_empresa)
 
-        self.btn_excluir = QPushButton(self.frame_3)
-        self.btn_excluir.setObjectName(u"btn_excluir")
-        self.btn_excluir.setMinimumSize(QSize(90, 30))
-        self.btn_excluir.setFont(font2)
-        self.btn_excluir.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excluir.setStyleSheet(u"QPushButton:hover{\n"
+        self.btn_excluir_empresa = QPushButton(self.frame_3)
+        self.btn_excluir_empresa.setObjectName(u"btn_excluir_empresa")
+        self.btn_excluir_empresa.setMinimumSize(QSize(90, 30))
+        self.btn_excluir_empresa.setFont(font2)
+        self.btn_excluir_empresa.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_excluir_empresa.setStyleSheet(u"QPushButton:hover{\n"
 "	background-color: rgb(199, 66, 0);\n"
 "	color: #fff;\n"
 "}")
 
-        self.verticalLayout_10.addWidget(self.btn_excluir)
+        self.verticalLayout_10.addWidget(self.btn_excluir_empresa)
 
         self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -599,31 +599,31 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_empresa.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Cadastro", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">EMPRESAS</span></p></body></html>", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.tb_company.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.tb_company.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"NOME", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.tb_company.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"LOGRADOURO", None));
-        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3 = self.tb_company.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"N\u00daMERO", None));
-        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem4 = self.tb_company.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"COMPLEMENTO", None));
-        ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem5 = self.tb_company.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"BAIRRO", None));
-        ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
+        ___qtablewidgetitem6 = self.tb_company.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"MUNIC\u00cdPIO", None));
-        ___qtablewidgetitem7 = self.tableWidget.horizontalHeaderItem(7)
+        ___qtablewidgetitem7 = self.tb_company.horizontalHeaderItem(7)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"UF", None));
-        ___qtablewidgetitem8 = self.tableWidget.horizontalHeaderItem(8)
+        ___qtablewidgetitem8 = self.tb_company.horizontalHeaderItem(8)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"CEP", None));
-        ___qtablewidgetitem9 = self.tableWidget.horizontalHeaderItem(9)
+        ___qtablewidgetitem9 = self.tb_company.horizontalHeaderItem(9)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"TELEFONE", None));
-        ___qtablewidgetitem10 = self.tableWidget.horizontalHeaderItem(10)
+        ___qtablewidgetitem10 = self.tb_company.horizontalHeaderItem(10)
         ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"EMAIL", None));
-        self.btn_excel.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
-        self.btn_alterar.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
-        self.btn_excluir.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
+        self.btn_excel_empresa.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_alterar_empresa.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
+        self.btn_excluir_empresa.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Empresas", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Contatos</span></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/whatsApp.png\"/><span style=\" font-size:18pt; vertical-align:super;\">(31)99398-8562</span></p></body></html>", None))
