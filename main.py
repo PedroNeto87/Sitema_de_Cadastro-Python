@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import sqlite3
+import os
 from PySide6 import QtCore 
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTableWidgetItem)
@@ -14,7 +15,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle('Sistema de Cadastro')
-        appIcon = QIcon(u'')
+        appIcon = QIcon(u'icons/logo4.png')
         self.setWindowIcon(appIcon)
 
         ##############################################
@@ -23,7 +24,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #################################################
         #PAGINAS DO SISTEMA
         self.btn_pg_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
-        self.btn_pg_cadastro.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_empresa))
+        self.btn_pg_cadastro.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_empresas))
+        self.btn_pg_usuarios.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_usuarios))
         self.btn_pg_contatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contatos))
         self.btn_pg_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
         ####################################################################################################
@@ -40,7 +42,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_excluir_empresa.clicked.connect(self.excluir_empresa)
         ##############################################################
         #GERAR ARQUIVO EXCEL DE EMPRESAS
-        self.btn_excel_empresa.clicked.connect(self.gerar_excel_interface)
+        #self.btn_excel_empresa.clicked.connect(self.gerar_excel_interface)
         self.btn_excel_empresa.clicked.connect(self.gerar_excel_banco)
         ##################################################################
         #PREENCHER A TABELA DE EMPRESAS
@@ -178,7 +180,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         colunas = ['CNPJ', 'NOME', 'LOGRADOURO', 'NUMERO', 'COMPLEMENTO', 'BAIRRO', 'MUNICIPIO', 'UF', 'CEP', 'TELEFONE', 'EMAIL']
         empresas = pd.DataFrame(todos_dados, columns=colunas)
-        empresas.to_excel('Empresas.xlsx', sheet_name='empresas', index=False)
+        caminho_arquivo = os.path.expanduser('~/Desktop/Empresas.xlsx')
+        empresas.to_excel(caminho_arquivo, sheet_name='empresas', index=False)
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -192,7 +195,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         #import sqlite3
         cnx = sqlite3.connect('system.db')
         empresas = pd.read_sql_query("""SELECT * FROM Empresas""", cnx)
-        empresas.to_excel('Empresas_.xlsx', sheet_name='empresas_', index=False)
+        caminho_arquivo = os.path.expanduser('~/Desktop/Empresas.xlsx')
+        empresas.to_excel(caminho_arquivo, sheet_name='empresas', index=False)
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
