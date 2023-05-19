@@ -209,7 +209,7 @@ QPushButton:hover{
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_pg_cadastro">
+                 <widget class="QPushButton" name="btn_pg_empresas">
                   <property name="minimumSize">
                    <size>
                     <width>0</width>
@@ -912,16 +912,6 @@ QFrame{
                        <enum>QFrame::Raised</enum>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_2">
-                       <item row="3" column="1">
-                        <widget class="QLineEdit" name="txt_senha">
-                         <property name="alignment">
-                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                         </property>
-                         <property name="placeholderText">
-                          <string>Senha</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item row="1" column="0">
                         <widget class="QLabel" name="lbl_nome">
                          <property name="styleSheet">
@@ -995,12 +985,47 @@ background-color: rgb(249, 249, 249);</string>
                           <string notr="true">color: rgb(0, 0, 0);</string>
                          </property>
                          <property name="text">
-                          <string>Usuário</string>
+                          <string>Usuário:</string>
                          </property>
                         </widget>
                        </item>
-                       <item row="5" column="1">
+                       <item row="5" column="0">
+                        <widget class="QLabel" name="lbl_perfil">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">color: rgb(0, 0, 0);</string>
+                         </property>
+                         <property name="text">
+                          <string>Perfil:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="3" column="1" colspan="2">
+                        <widget class="QLineEdit" name="txt_senha">
+                         <property name="echoMode">
+                          <enum>QLineEdit::Password</enum>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                         </property>
+                         <property name="placeholderText">
+                          <string>Senha</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="5" column="1" colspan="2">
                         <widget class="QComboBox" name="cb_perfil">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
                          <item>
                           <property name="text">
                            <string>Usuário</string>
@@ -1013,18 +1038,11 @@ background-color: rgb(249, 249, 249);</string>
                          </item>
                         </widget>
                        </item>
-                       <item row="5" column="0">
-                        <widget class="QLabel" name="lbl_perfil">
-                         <property name="styleSheet">
-                          <string notr="true">color: rgb(0, 0, 0);</string>
-                         </property>
-                         <property name="text">
-                          <string>Perfil:</string>
-                         </property>
-                        </widget>
-                       </item>
                        <item row="4" column="1">
                         <widget class="QLineEdit" name="txt_repeteSenha">
+                         <property name="echoMode">
+                          <enum>QLineEdit::Password</enum>
+                         </property>
                          <property name="alignment">
                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                          </property>
@@ -1124,6 +1142,11 @@ QTableWidget{
                         <column>
                          <property name="text">
                           <string>USUÁRIO</string>
+                         </property>
+                        </column>
+                        <column>
+                         <property name="text">
+                          <string>SENHA</string>
                          </property>
                         </column>
                         <column>

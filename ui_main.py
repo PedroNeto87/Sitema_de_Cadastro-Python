@@ -122,14 +122,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.btn_pg_home)
 
-        self.btn_pg_cadastro = QPushButton(self.page1)
-        self.btn_pg_cadastro.setObjectName(u"btn_pg_cadastro")
-        self.btn_pg_cadastro.setMinimumSize(QSize(0, 30))
-        self.btn_pg_cadastro.setFont(font1)
-        self.btn_pg_cadastro.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_pg_cadastro.setStyleSheet(u"")
+        self.btn_pg_empresas = QPushButton(self.page1)
+        self.btn_pg_empresas.setObjectName(u"btn_pg_empresas")
+        self.btn_pg_empresas.setMinimumSize(QSize(0, 30))
+        self.btn_pg_empresas.setFont(font1)
+        self.btn_pg_empresas.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_pg_empresas.setStyleSheet(u"")
 
-        self.verticalLayout_5.addWidget(self.btn_pg_cadastro)
+        self.verticalLayout_5.addWidget(self.btn_pg_empresas)
 
         self.btn_pg_usuarios = QPushButton(self.page1)
         self.btn_pg_usuarios.setObjectName(u"btn_pg_usuarios")
@@ -512,12 +512,6 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_5)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.txt_senha = QLineEdit(self.frame_5)
-        self.txt_senha.setObjectName(u"txt_senha")
-        self.txt_senha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.txt_senha, 3, 1, 1, 1)
-
         self.lbl_nome = QLabel(self.frame_5)
         self.lbl_nome.setObjectName(u"lbl_nome")
         self.lbl_nome.setStyleSheet(u"color: rgb(0, 0, 0);")
@@ -562,21 +556,39 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.lbl_usuario, 2, 0, 1, 1)
 
-        self.cb_perfil = QComboBox(self.frame_5)
-        self.cb_perfil.addItem("")
-        self.cb_perfil.addItem("")
-        self.cb_perfil.setObjectName(u"cb_perfil")
-
-        self.gridLayout_2.addWidget(self.cb_perfil, 5, 1, 1, 1)
-
         self.lbl_perfil = QLabel(self.frame_5)
         self.lbl_perfil.setObjectName(u"lbl_perfil")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.lbl_perfil.sizePolicy().hasHeightForWidth())
+        self.lbl_perfil.setSizePolicy(sizePolicy1)
         self.lbl_perfil.setStyleSheet(u"color: rgb(0, 0, 0);")
 
         self.gridLayout_2.addWidget(self.lbl_perfil, 5, 0, 1, 1)
 
+        self.txt_senha = QLineEdit(self.frame_5)
+        self.txt_senha.setObjectName(u"txt_senha")
+        self.txt_senha.setEchoMode(QLineEdit.Password)
+        self.txt_senha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.txt_senha, 3, 1, 1, 2)
+
+        self.cb_perfil = QComboBox(self.frame_5)
+        self.cb_perfil.addItem("")
+        self.cb_perfil.addItem("")
+        self.cb_perfil.setObjectName(u"cb_perfil")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.cb_perfil.sizePolicy().hasHeightForWidth())
+        self.cb_perfil.setSizePolicy(sizePolicy2)
+
+        self.gridLayout_2.addWidget(self.cb_perfil, 5, 1, 1, 2)
+
         self.txt_repeteSenha = QLineEdit(self.frame_5)
         self.txt_repeteSenha.setObjectName(u"txt_repeteSenha")
+        self.txt_repeteSenha.setEchoMode(QLineEdit.Password)
         self.txt_repeteSenha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.gridLayout_2.addWidget(self.txt_repeteSenha, 4, 1, 1, 1)
@@ -619,8 +631,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.tb_users = QTableWidget(self.tab_4)
-        if (self.tb_users.columnCount() < 4):
-            self.tb_users.setColumnCount(4)
+        if (self.tb_users.columnCount() < 5):
+            self.tb_users.setColumnCount(5)
         __qtablewidgetitem11 = QTableWidgetItem()
         self.tb_users.setHorizontalHeaderItem(0, __qtablewidgetitem11)
         __qtablewidgetitem12 = QTableWidgetItem()
@@ -629,6 +641,8 @@ class Ui_MainWindow(object):
         self.tb_users.setHorizontalHeaderItem(2, __qtablewidgetitem13)
         __qtablewidgetitem14 = QTableWidgetItem()
         self.tb_users.setHorizontalHeaderItem(3, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.tb_users.setHorizontalHeaderItem(4, __qtablewidgetitem15)
         self.tb_users.setObjectName(u"tb_users")
         self.tb_users.setStyleSheet(u"QHeaderView::section{\n"
 "	background-color: rgb(148, 148, 148);\n"
@@ -818,7 +832,7 @@ class Ui_MainWindow(object):
         self.page1.setWhatsThis(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><br/></p></body></html>", None))
 #endif // QT_CONFIG(whatsthis)
         self.btn_pg_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_pg_cadastro.setText(QCoreApplication.translate("MainWindow", u"Empresas", None))
+        self.btn_pg_empresas.setText(QCoreApplication.translate("MainWindow", u"Empresas", None))
         self.btn_pg_usuarios.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rios", None))
         self.btn_pg_contatos.setText(QCoreApplication.translate("MainWindow", u"Contatos", None))
         self.btn_pg_sobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
@@ -869,18 +883,18 @@ class Ui_MainWindow(object):
         self.btn_alterar_empresa.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_empresa.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Empresas", None))
-        self.txt_senha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.lbl_nome.setText(QCoreApplication.translate("MainWindow", u"Nome:", None))
         self.lbl_senha.setText(QCoreApplication.translate("MainWindow", u"Senha:", None))
         self.lbl_usuarios.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">USU\u00c1RIOS</span></p></body></html>", None))
         self.txt_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.lbl_repeteSenha.setText(QCoreApplication.translate("MainWindow", u"Repete senha:", None))
         self.txt_nomeUsuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome completo", None))
-        self.lbl_usuario.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
+        self.lbl_usuario.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio:", None))
+        self.lbl_perfil.setText(QCoreApplication.translate("MainWindow", u"Perfil:", None))
+        self.txt_senha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.cb_perfil.setItemText(0, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.cb_perfil.setItemText(1, QCoreApplication.translate("MainWindow", u"Administrador", None))
 
-        self.lbl_perfil.setText(QCoreApplication.translate("MainWindow", u"Perfil:", None))
         self.txt_repeteSenha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Repete senha", None))
         self.btn_cadastrar_usuario.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Cadastro", None))
@@ -892,7 +906,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem13 = self.tb_users.horizontalHeaderItem(2)
         ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"USU\u00c1RIO", None));
         ___qtablewidgetitem14 = self.tb_users.horizontalHeaderItem(3)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"PERFIL", None));
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"SENHA", None));
+        ___qtablewidgetitem15 = self.tb_users.horizontalHeaderItem(4)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"PERFIL", None));
         self.btn_excel_usuario.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_alterar_usuario.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_usuario.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))

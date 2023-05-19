@@ -1,20 +1,90 @@
 import sqlite3
 
 
-class Data_base:
+class DataBase:
     def __init__(self, name = 'system.db') -> None:
         self.name = name
 
     def connect(self):
         self.connection = sqlite3.connect(self.name)
 
-    def close_connection(self):
+    def closeConnection(self):
         try:
             self.connection.close()
         except:
             pass
-    
-    def create_table_companies(self):
+
+    def createTableUsers(self):
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute("""
+                CREATE TABLE IF NOT EXISTS Usuarios (
+                ID INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                NAME TEXT NOT NULL,
+                USER TEXT UNIQUE NOT NULL,
+                PASSWORD TEXT NOT NULL,
+                ACCESS TEXT NOT NULL
+                );
+            """)
+        except AttributeError:
+            print('Faça a conexão')
+
+    def insertUser(self, name, user, password, access):
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("""INSERT INTO Usuarios (name, user, password, access) VALUES (?,?,?,?)""", (name, user, password, access))
+            self.connection.commit()
+        except AttributeError:
+            print('Faça a conexão')
+
+    def selecAllUsers(self):
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute("""SELECT * FROM Usuarios ORDER BY ID""")
+            usuarios = cursor.fetchall()
+            return usuarios
+        except:
+            pass
+
+    def updateUser(self, fullDataSet):
+        cursor = self.connection.cursor()
+        cursor.execute(f"""UPDATE Usuarios SET
+            ID = '{fullDataSet[0]}',
+            NAME = '{fullDataSet[1]}',
+            USER = '{fullDataSet[2]}',
+            PASSWORD = '{fullDataSet[3]}',
+            ACCESS = '{fullDataSet[4]}'
+
+            WHERE ID = '{fullDataSet[0]}'
+        """)
+        self.connection.commit()
+
+    def deleteUser(self, id):
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute(f"""DELETE FROM Usuarios WHERE ID = {id}""")
+            self.connection.commit()
+            return ("Cadastro de usuário excluído com sucesso!")
+        except:
+            return("Erro ao excluir registro!")
+
+    def checkUser(self, user, password):
+        try:
+            cursor = self.connection.cursor()
+            cursor.execute("""SELECT * FROM Usuarios""")
+
+            for linha in cursor.fetchall():
+                if linha[2].upper() == user.upper() and linha[3] == password and linha[4] == 'Administrador':
+                    return 'Administrador'
+                elif linha[2].upper() == user.upper() and linha[3] == password and linha[4] == 'Usuário':
+                    return 'Usuario'
+                else:
+                    continue
+            return 'Sem acesso'    
+        except AttributeError:
+            print('Faça a conexão')
+
+    def createTableCompanies(self):
         cursor = self.connection.cursor()
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS Empresas (
@@ -33,19 +103,19 @@ class Data_base:
             );
         """)
 
-    def register_company(self, fullDataSet):
-        campos_tabela = ('CNPJ', 'NOME', 'LOGRADOURO', 'NUMERO', 'COMPLEMENTO', 'BAIRRO', 'MUNICIPIO', 'UF', 'CEP', 'TELEFONE', 'EMAIL')
+    def insertCompany(self, fullDataSet):
+        camposTabela = ('CNPJ', 'NOME', 'LOGRADOURO', 'NUMERO', 'COMPLEMENTO', 'BAIRRO', 'MUNICIPIO', 'UF', 'CEP', 'TELEFONE', 'EMAIL')
         qntd = ('?,?,?,?,?,?,?,?,?,?,?')
 
         cursor = self.connection.cursor()
         try:
-            cursor.execute(f"""INSERT INTO Empresas {campos_tabela} VALUES ({qntd})""", fullDataSet)
+            cursor.execute(f"""INSERT INTO Empresas {camposTabela} VALUES ({qntd})""", fullDataSet)
             self.connection.commit()
             return ("OK")
         except:
             return ("Erro")
-        
-    def select_all_campanies(self):
+
+    def selectAllCampanies(self):
         cursor = self.connection.cursor()
         try:
             cursor.execute("""SELECT * FROM Empresas ORDER BY NOME""")
@@ -54,16 +124,7 @@ class Data_base:
         except:
             pass
 
-    def delete_company(self, id):
-        cursor = self.connection.cursor()
-        try:
-            cursor.execute(f"""DELETE FROM Empresas WHERE CNPJ = '{id}'""")
-            self.connection.commit()
-            return ("Cadastro de empresa excluido com sucesso!")
-        except:
-            return ("Erro ao excluir registro!")
-    
-    def update_company(self, fullDataSet):
+    def updateCompany(self, fullDataSet):
         cursor = self.connection.cursor()
         cursor.execute(f"""UPDATE Empresas SET
             CNPJ = '{fullDataSet[0]}',
@@ -81,3 +142,12 @@ class Data_base:
             WHERE CNPJ = '{fullDataSet[0]}'
             """)
         self.connection.commit()
+
+    def deleteCompany(self, id):
+        cursor = self.connection.cursor()
+        try:
+            cursor.execute(f"""DELETE FROM Empresas WHERE CNPJ = '{id}'""")
+            self.connection.commit()
+            return ("Cadastro de empresa excluído com sucesso!")
+        except:
+            return ("Erro ao excluir registro!")
