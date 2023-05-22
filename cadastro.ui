@@ -339,7 +339,7 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>150</width>
+                 <width>182</width>
                  <height>436</height>
                 </rect>
                </property>
@@ -359,7 +359,7 @@ QPushButton:hover{
                    <string notr="true">background-color: rgb(12, 12, 12);</string>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Usuário:&lt;/span&gt; Adminstrador&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sistema:&lt;/span&gt; Cadastro&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Status:&lt;/span&gt; Ativo&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Venc:&lt;/span&gt; 31/12/2999&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Sistema de Cadastros&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Status:&lt;/span&gt; Ativo&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Venc:&lt;/span&gt; 31/12/2999&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -429,7 +429,7 @@ QPushButton:hover{
             <item>
              <widget class="QLabel" name="label">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Sistema de Cadastro&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Sistema de Cadastros&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -465,7 +465,7 @@ QPushButton:hover{
                 <item>
                  <widget class="QLabel" name="logo">
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icons/icons/logo4.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icons/icons/logo.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
@@ -476,7 +476,7 @@ QPushButton:hover{
                 <item>
                  <widget class="QTabWidget" name="tabWidget">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="tab">
                    <attribute name="title">
@@ -565,7 +565,7 @@ QFrame{
 background-color: rgb(249, 249, 249);</string>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;EMPRESAS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icons/icons/empresa.png&quot;/&gt;&lt;span style=&quot; font-size:48pt; font-weight:600; vertical-align:super;&quot;&gt;EMPRESAS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </item>
@@ -904,7 +904,7 @@ QFrame{
                 <item>
                  <widget class="QTabWidget" name="tabWidget_2">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="tab_3">
                    <attribute name="title">
@@ -943,7 +943,7 @@ QFrame{
 background-color: rgb(249, 249, 249);</string>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;USUÁRIOS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icons/icons/usuario.png&quot;/&gt;&lt;span style=&quot; font-size:48pt; font-weight:600; vertical-align:super;&quot;&gt;USUÁRIOS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </item>
@@ -1311,7 +1311,7 @@ QFrame{
                 <item>
                  <widget class="QTabWidget" name="tabWidget_3">
                   <property name="currentIndex">
-                   <number>1</number>
+                   <number>0</number>
                   </property>
                   <widget class="QWidget" name="tab_5">
                    <attribute name="title">
@@ -1344,7 +1344,7 @@ QFrame{
 background-color: rgb(249, 249, 249);</string>
                          </property>
                          <property name="text">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;PRODUTOS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icons/icons/produto.png&quot;/&gt;&lt;span style=&quot; font-size:48pt; font-weight:600; vertical-align:super;&quot;&gt;PRODUTOS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                          </property>
                         </widget>
                        </item>
@@ -1549,7 +1549,7 @@ QFrame{
                            </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton:hover{
-	background-color: rgb(85, 85, 255);
+	background-color: rgb(49, 147, 0);
 	color: #fff;
 }</string>
                            </property>
@@ -1629,37 +1629,64 @@ QFrame{
 background-color: rgb(65, 65, 65);</string>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Contatos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/icons/contato.png&quot;/&gt;&lt;span style=&quot; font-size:48pt; font-weight:600; vertical-align:super;&quot;&gt;Contatos&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <property name="bottomMargin">
+                   <number>100</number>
+                  </property>
                   <item>
                    <widget class="QLabel" name="label_7">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/icons/whatsApp.png&quot;/&gt;&lt;span style=&quot; font-size:18pt; vertical-align:super;&quot;&gt;(31)99398-8562&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; vertical-align:super;&quot;&gt;(31)99398-8562&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLabel" name="label_8">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/icons/email.png&quot;/&gt;&lt;span style=&quot; font-size:20pt; vertical-align:super;&quot;&gt;pedrofcn01@hotmail.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; vertical-align:super;&quot;&gt;pedrofcn01@hotmail.com&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLabel" name="label_9">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/icons/github.png&quot;/&gt;&lt;a href=&quot;https://github.com/PedroNeto87&quot;&gt;&lt;span style=&quot; font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;&quot;&gt;https://github.com/PedroNeto87&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/PedroNeto87&quot;&gt;&lt;span style=&quot; font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;&quot;&gt;https://github.com/PedroNeto87&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
                   <item>
                    <widget class="QLabel" name="label_10">
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>20</height>
+                     </size>
+                    </property>
                     <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/icons/linkdin_nova.png&quot;/&gt;&lt;a href=&quot;https://www.linkedin.com/in/pedro-ferreira-cunha-neto/&quot;&gt;&lt;span style=&quot; font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;&quot;&gt;https://www.linkedin.com/in/pedro-ferreira-cunha-neto/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/pedro-ferreira-cunha-neto/&quot;&gt;&lt;span style=&quot; font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;&quot;&gt;https://www.linkedin.com/in/pedro-ferreira-cunha-neto/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
                    </widget>
                   </item>
@@ -1676,14 +1703,14 @@ background-color: rgb(65, 65, 65);</string>
 background-color: rgb(65, 65, 65);</string>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;Sobre&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/icons/icons/sobre.png&quot;/&gt;&lt;span style=&quot; font-size:48pt; font-weight:600; vertical-align:super;&quot;&gt;Sobre&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
                 <item>
                  <widget class="QLabel" name="label_13">
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Este sistema faz consulta do CNPJ utilizando API da Receita Federal e faz o cadastro da empresa em um banco de dados SQLITE3.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Também gera um arquivo em formato .XLSX(Excel) com as informações das empresas cadastradas.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Objetivo desse sistema é ensinar como utilizar Python e o QT para desenvolver aplicações modernas funcionais.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Este sistema realiza cadastro de empresas com base na consulta do CNPJ utilizando API da Receita Federal, faz também cadastro de usuários e produtos e armazena em um banco de dados SQLITE3.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Também gera arquivo em formato .XLSX(Excel) com as informações cadastradas no sistema.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                   <property name="wordWrap">
                    <bool>true</bool>

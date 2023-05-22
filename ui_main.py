@@ -171,7 +171,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page1, u"Menu")
         self.page2 = QWidget()
         self.page2.setObjectName(u"page2")
-        self.page2.setGeometry(QRect(0, 0, 150, 436))
+        self.page2.setGeometry(QRect(0, 0, 182, 436))
         self.verticalLayout_6 = QVBoxLayout(self.page2)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -885,7 +885,7 @@ class Ui_MainWindow(object):
         self.btn_excel_produto.setObjectName(u"btn_excel_produto")
         self.btn_excel_produto.setMinimumSize(QSize(90, 30))
         self.btn_excel_produto.setStyleSheet(u"QPushButton:hover{\n"
-"	background-color: rgb(85, 85, 255);\n"
+"	background-color: rgb(49, 147, 0);\n"
 "	color: #fff;\n"
 "}")
 
@@ -939,23 +939,28 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13 = QVBoxLayout()
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(-1, -1, -1, 100)
         self.label_7 = QLabel(self.pg_contatos)
         self.label_7.setObjectName(u"label_7")
+        self.label_7.setMaximumSize(QSize(16777215, 20))
 
         self.verticalLayout_13.addWidget(self.label_7)
 
         self.label_8 = QLabel(self.pg_contatos)
         self.label_8.setObjectName(u"label_8")
+        self.label_8.setMaximumSize(QSize(16777215, 20))
 
         self.verticalLayout_13.addWidget(self.label_8)
 
         self.label_9 = QLabel(self.pg_contatos)
         self.label_9.setObjectName(u"label_9")
+        self.label_9.setMaximumSize(QSize(16777215, 20))
 
         self.verticalLayout_13.addWidget(self.label_9)
 
         self.label_10 = QLabel(self.pg_contatos)
         self.label_10.setObjectName(u"label_10")
+        self.label_10.setMaximumSize(QSize(16777215, 20))
 
         self.verticalLayout_13.addWidget(self.label_10)
 
@@ -1015,9 +1020,9 @@ class Ui_MainWindow(object):
 
         self.toolBox.setCurrentIndex(0)
         self.Pages.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(1)
-        self.tabWidget_2.setCurrentIndex(1)
-        self.tabWidget_3.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
+        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget_3.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1042,17 +1047,17 @@ class Ui_MainWindow(object):
         self.btn_pg_contatos.setText(QCoreApplication.translate("MainWindow", u"Contatos", None))
         self.btn_pg_sobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page1), QCoreApplication.translate("MainWindow", u"Menu", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Usu\u00e1rio:</span> Adminstrador</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Sistema:</span> Cadastro</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Status:</span> Ativo</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Venc:</span> 31/12/2999</p></body></html>", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">Sistema de Cadastros</span></p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Status:</span> Ativo</p><p align=\"center\"><br/></p><p align=\"center\"><span style=\" font-weight:600;\">Venc:</span> 31/12/2999</p></body></html>", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page2), QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es", None))
         self.btn_toggle.setText("")
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:14pt; font-weight:600;\">Sistema de Cadastro</span></p></body></html>", None))
-        self.logo.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/logo4.png\"/></p></body></html>", None))
+        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"right\"><span style=\" font-size:14pt; font-weight:600;\">Sistema de Cadastros</span></p></body></html>", None))
+        self.logo.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/logo.png\"/></p></body></html>", None))
         self.txt_logradouro.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Logardouro", None))
         self.txt_municipio.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Munic\u00edpio", None))
         self.txt_telefone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.txt_numero.setPlaceholderText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
         self.txt_nome.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome empresarial", None))
-        self.lbl_empresas.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">EMPRESAS</span></p></body></html>", None))
+        self.lbl_empresas.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/empresa.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">EMPRESAS</span></p></body></html>", None))
         self.txt_bairro.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Bairro", None))
         self.txt_email.setPlaceholderText(QCoreApplication.translate("MainWindow", u"E-mail", None))
         self.txt_cnpj.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CNPJ", None))
@@ -1088,7 +1093,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_empresa.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_empresa.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Empresas", None))
-        self.lbl_usuarios.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">USU\u00c1RIOS</span></p></body></html>", None))
+        self.lbl_usuarios.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/usuario.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">USU\u00c1RIOS</span></p></body></html>", None))
         self.lbl_nome.setText(QCoreApplication.translate("MainWindow", u"Nome:", None))
         self.txt_nomeUsuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome completo", None))
         self.lbl_usuario.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio:", None))
@@ -1118,7 +1123,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_usuario.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_usuario.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Usu\u00e1rios", None))
-        self.label_14.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">PRODUTOS</span></p></body></html>", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/produto.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">PRODUTOS</span></p></body></html>", None))
         self.lbl_descricao.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o:", None))
         self.txt_descricao.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o do produto", None))
         self.lbl_unidade.setText(QCoreApplication.translate("MainWindow", u"Unidade:", None))
@@ -1144,13 +1149,13 @@ class Ui_MainWindow(object):
         self.btn_alterar_produto.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_produto.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Produtos", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Contatos</span></p></body></html>", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/whatsApp.png\"/><span style=\" font-size:18pt; vertical-align:super;\">(31)99398-8562</span></p></body></html>", None))
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/email.png\"/><span style=\" font-size:20pt; vertical-align:super;\">pedrofcn01@hotmail.com</span></p></body></html>", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/github.png\"/><a href=\"https://github.com/PedroNeto87\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://github.com/PedroNeto87</span></a></p></body></html>", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/linkdin_nova.png\"/><a href=\"https://www.linkedin.com/in/pedro-ferreira-cunha-neto/\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://www.linkedin.com/in/pedro-ferreira-cunha-neto/</span></a></p></body></html>", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Sobre</span></p></body></html>", None))
-        self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Este sistema faz consulta do CNPJ utilizando API da Receita Federal e faz o cadastro da empresa em um banco de dados SQLITE3.</span></p><p><span style=\" font-size:14pt;\">Tamb\u00e9m gera um arquivo em formato .XLSX(Excel) com as informa\u00e7\u00f5es das empresas cadastradas.</span></p><p><span style=\" font-size:14pt;\">Objetivo desse sistema \u00e9 ensinar como utilizar Python e o QT para desenvolver aplica\u00e7\u00f5es modernas funcionais.</span></p></body></html>", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/contato.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">Contatos</span></p></body></html>", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:18pt; vertical-align:super;\">(31)99398-8562</span></p></body></html>", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:20pt; vertical-align:super;\">pedrofcn01@hotmail.com</span></p></body></html>", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><a href=\"https://github.com/PedroNeto87\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://github.com/PedroNeto87</span></a></p></body></html>", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><a href=\"https://www.linkedin.com/in/pedro-ferreira-cunha-neto/\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://www.linkedin.com/in/pedro-ferreira-cunha-neto/</span></a></p></body></html>", None))
+        self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/sobre.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">Sobre</span></p></body></html>", None))
+        self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Este sistema realiza cadastro de empresas com base na consulta do CNPJ utilizando API da Receita Federal, faz tamb\u00e9m cadastro de usu\u00e1rios e produtos e armazena em um banco de dados SQLITE3.</span></p><p><span style=\" font-size:14pt;\">Tamb\u00e9m gera arquivo em formato .XLSX(Excel) com as informa\u00e7\u00f5es cadastradas no sistema.</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:7pt;\">\u00a9 Pedro_Neto 2023</span></p></body></html>", None))
     # retranslateUi
 

@@ -17,7 +17,7 @@ class Login(QWidget, Ui_Login):
         self.tentativas = 0
         self.setupUi(self)
         self.setWindowTitle('Login do Sistema')
-        appIcon = QIcon(u'icons/logo4.png')
+        appIcon = QIcon(u'icons/logo.png')
         self.setWindowIcon(appIcon)
 
         self.btn_login.clicked.connect(self.checkLogin)
@@ -49,17 +49,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         self.setWindowTitle('Sistema de Cadastro')
-        appIcon = QIcon(u'icons/logo4.png')
+        appIcon = QIcon(u'icons/logo.png')
         self.setWindowIcon(appIcon)
 
-        ################################################
         #CHECAGEM DE USUARIO
         if user == 'Usuario':
             self.btn_pg_usuarios.setVisible(False)
-        ################################################
+
         #TOGGLE BUTTON
         self.btn_toggle.clicked.connect(self.menuAnimado)
-        #################################################
+
         #PAGINAS DO SISTEMA
         self.btn_pg_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
         self.btn_pg_empresas.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_empresas))
@@ -67,35 +66,34 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_pg_produtos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_produtos))
         self.btn_pg_contatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contatos))
         self.btn_pg_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
-        ####################################################################################################
+
         #PREENCHER AUTOMATICAMENTE OS DADOS DO CNPJ
         self.txt_cnpj.editingFinished.connect(self.consultarApi)
-        #########################################################
+
         #CADASTRAR EMPRESA, USUARIO, PRODUTO
         self.btn_cadastrar_empresa.clicked.connect(self.cadastrarEmpresa)
         self.btn_cadastrar_usuario.clicked.connect(self.cadastrarUsuario)
         self.btn_cadastra_produto.clicked.connect(self.cadastrarProduto)
-        ##################################################################
+
         #ATUALIZAR CADASTRO EMPRESAS, USUARIOS, PRODUTOS
         self.btn_alterar_empresa.clicked.connect(self.editarEmpresas)
         self.btn_alterar_usuario.clicked.connect(self.editarUsuarios)
+        self.btn_alterar_produto.clicked.connect(self.editarProdutos)
 
-        #############################################################
         #EXCLUIR CADASTRO EMPRESAS, USUARIOS, PRODUTOS
         self.btn_excluir_empresa.clicked.connect(self.excluirEmpresa)
         self.btn_excluir_usuario.clicked.connect(self.excluirUsuarios)
+        self.btn_excluir_produto.clicked.connect(self.excluirProdutos)
 
-        ##############################################################
         #GERAR ARQUIVO EXCEL EMPRESAS, USUARIOS, PRODUTOS
         self.btn_excel_empresa.clicked.connect(self.excelEmpresas)
         self.btn_excel_usuario.clicked.connect(self.excelUsuarios)
+        self.btn_excel_produto.clicked.connect(self.excelProdutos)
 
-        ##########################################################
         #PREENCHER TABELA EMPRESAS, USUÁRIOS, PRODUTOS
         self.tabelaEmpresas()
         self.tabelaUsuarios()
         self.tabelaProdutos()
-        ######################
 
     def menuAnimado(self):
         width = self.left_menu.width()
@@ -165,7 +163,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             atualizarDados.append(dados)
             dados = []
         
-        #ATUALIZAR DADOS NO BANCO
         db = DataBase()
         db.connect()
         for user in atualizarDados:
@@ -234,7 +231,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
         fulDataSet = (self.txt_cnpj.text(), self.txt_nome.text(), self.txt_logradouro.text(), self.txt_numero.text(), self.txt_complemento.text(), self.txt_bairro.text(), self.txt_municipio.text(), self.txt_uf.text(), self.txt_cep.text(), self.txt_telefone.text().strip(), self.txt_email.text())
 
-        #Cadastrar no banco de dados
         resp = db.insertCompany(fulDataSet)
         if resp == 'OK':
             msg = QMessageBox()
@@ -277,7 +273,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             atualizarDados.append(dados)
             dados = []
 
-        #ATUALIZAR DADOS NO BANCO
         db = DataBase()
         db.connect()
         for emp in atualizarDados:
@@ -315,9 +310,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db.closeConnection()
 
     def excelEmpresas(self):
-        #pip install openpyxl
-        #pip install pandas
-        #import sqlite3
         cnx = sqlite3.connect('system.db')
         empresas = pd.read_sql_query("""SELECT * FROM Empresas""", cnx)
         caminhoArquivo = os.path.expanduser('~/Desktop/Empresas.xlsx')
@@ -330,8 +322,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msg.exec()
 
     def gerarExcelInterface(self):
-            #pip install openpyxl
-            #pip install pandas
             dados = []
             todosDados = []
 
@@ -387,6 +377,66 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.tb_product.setItem(linha, coluna, QTableWidgetItem(str(dado)))
 
         db.closeConnection()
+
+    def editarProdutos(self):
+        dados = []
+        atualizarDados = []
+
+        for linha in range(self.tb_product.rowCount()):
+            for coluna in range(self.tb_product.columnCount()):
+                dados.append(self.tb_product.item(linha, coluna).text())
+            atualizarDados.append(dados)
+            dados = []
+
+        db = DataBase()
+        db.connect()
+        for produto in atualizarDados:
+            db.updateProduct(tuple(produto))
+        db.closeConnection()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Atualização de Dados')
+        msg.setText('Dados atualizados com sucesso!')
+        msg.exec()
+
+    def excluirProdutos(self):
+        db = DataBase()
+        db.connect()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Warning)
+        msg.setWindowTitle('Excluir')
+        msg.setText('Este registro será excluído')
+        msg.setInformativeText('Você tem certeza que deseja excluir?')
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resp = msg.exec()
+
+        if resp == QMessageBox.Yes:
+            codigo = self.tb_product.selectionModel().currentIndex().siblingAtColumn(0).data()
+            resultado = db.deleteProduct(codigo)
+            self.tabelaProdutos()
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle('Produtos')
+            msg.setText(resultado)
+            msg.exec()
+
+        db.closeConnection()
+
+    def excelProdutos(self):
+        cnx = sqlite3.connect('system.db')
+        produtos = pd.read_sql_query("""SELECT * FROM Produtos""", cnx)
+        caminhoArquivo = os.path.expanduser('~/Desktop/Produtos.xlsx')
+        produtos.to_excel(caminhoArquivo, sheet_name='produtos', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Excel')
+        msg.setText('Relatório excel gerado com sucesso!')
+        msg.exec()
+
 
 if __name__ == '__main__':
     db = DataBase()

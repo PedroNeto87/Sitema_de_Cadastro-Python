@@ -202,7 +202,7 @@ class DataBase:
                 PRECO = '{fullDataSet[3]}',
                 ESTOQUE = '{fullDataSet[4]}'
 
-                WHERE ID = '{fullDataSet[0]}'
+                WHERE CODIGO = '{fullDataSet[0]}'
             """)
             self.connection.commit()
         except AttributeError:
