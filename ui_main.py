@@ -139,6 +139,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_5.addWidget(self.btn_pg_usuarios)
 
+        self.btn_pg_produtos = QPushButton(self.page1)
+        self.btn_pg_produtos.setObjectName(u"btn_pg_produtos")
+        self.btn_pg_produtos.setMinimumSize(QSize(0, 30))
+        self.btn_pg_produtos.setFont(font1)
+
+        self.verticalLayout_5.addWidget(self.btn_pg_produtos)
+
         self.btn_pg_contatos = QPushButton(self.page1)
         self.btn_pg_contatos.setObjectName(u"btn_pg_contatos")
         self.btn_pg_contatos.setMinimumSize(QSize(0, 30))
@@ -512,11 +519,37 @@ class Ui_MainWindow(object):
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_5)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.lbl_usuarios = QLabel(self.frame_5)
+        self.lbl_usuarios.setObjectName(u"lbl_usuarios")
+        self.lbl_usuarios.setMaximumSize(QSize(16777215, 16777215))
+        self.lbl_usuarios.setStyleSheet(u"color: rgb(0, 99, 148);\n"
+"background-color: rgb(249, 249, 249);")
+
+        self.gridLayout_2.addWidget(self.lbl_usuarios, 0, 0, 1, 2)
+
         self.lbl_nome = QLabel(self.frame_5)
         self.lbl_nome.setObjectName(u"lbl_nome")
         self.lbl_nome.setStyleSheet(u"color: rgb(0, 0, 0);")
 
         self.gridLayout_2.addWidget(self.lbl_nome, 1, 0, 1, 1)
+
+        self.txt_nomeUsuario = QLineEdit(self.frame_5)
+        self.txt_nomeUsuario.setObjectName(u"txt_nomeUsuario")
+        self.txt_nomeUsuario.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.txt_nomeUsuario, 1, 1, 1, 1)
+
+        self.lbl_usuario = QLabel(self.frame_5)
+        self.lbl_usuario.setObjectName(u"lbl_usuario")
+        self.lbl_usuario.setStyleSheet(u"color: rgb(0, 0, 0);")
+
+        self.gridLayout_2.addWidget(self.lbl_usuario, 2, 0, 1, 1)
+
+        self.txt_usuario = QLineEdit(self.frame_5)
+        self.txt_usuario.setObjectName(u"txt_usuario")
+        self.txt_usuario.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.gridLayout_2.addWidget(self.txt_usuario, 2, 1, 1, 1)
 
         self.lbl_senha = QLabel(self.frame_5)
         self.lbl_senha.setObjectName(u"lbl_senha")
@@ -524,19 +557,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.lbl_senha, 3, 0, 1, 1)
 
-        self.lbl_usuarios = QLabel(self.frame_5)
-        self.lbl_usuarios.setObjectName(u"lbl_usuarios")
-        self.lbl_usuarios.setMaximumSize(QSize(16777215, 16777215))
-        self.lbl_usuarios.setStyleSheet(u"color: rgb(0, 99, 148);\n"
-"background-color: rgb(249, 249, 249);")
+        self.txt_senha = QLineEdit(self.frame_5)
+        self.txt_senha.setObjectName(u"txt_senha")
+        self.txt_senha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.gridLayout_2.addWidget(self.lbl_usuarios, 0, 0, 1, 3)
-
-        self.txt_usuario = QLineEdit(self.frame_5)
-        self.txt_usuario.setObjectName(u"txt_usuario")
-        self.txt_usuario.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.txt_usuario, 2, 1, 1, 2)
+        self.gridLayout_2.addWidget(self.txt_senha, 3, 1, 1, 1)
 
         self.lbl_repeteSenha = QLabel(self.frame_5)
         self.lbl_repeteSenha.setObjectName(u"lbl_repeteSenha")
@@ -544,17 +569,11 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.lbl_repeteSenha, 4, 0, 1, 1)
 
-        self.txt_nomeUsuario = QLineEdit(self.frame_5)
-        self.txt_nomeUsuario.setObjectName(u"txt_nomeUsuario")
-        self.txt_nomeUsuario.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.txt_repeteSenha = QLineEdit(self.frame_5)
+        self.txt_repeteSenha.setObjectName(u"txt_repeteSenha")
+        self.txt_repeteSenha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.gridLayout_2.addWidget(self.txt_nomeUsuario, 1, 1, 1, 2)
-
-        self.lbl_usuario = QLabel(self.frame_5)
-        self.lbl_usuario.setObjectName(u"lbl_usuario")
-        self.lbl_usuario.setStyleSheet(u"color: rgb(0, 0, 0);")
-
-        self.gridLayout_2.addWidget(self.lbl_usuario, 2, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.txt_repeteSenha, 4, 1, 1, 1)
 
         self.lbl_perfil = QLabel(self.frame_5)
         self.lbl_perfil.setObjectName(u"lbl_perfil")
@@ -567,13 +586,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.lbl_perfil, 5, 0, 1, 1)
 
-        self.txt_senha = QLineEdit(self.frame_5)
-        self.txt_senha.setObjectName(u"txt_senha")
-        self.txt_senha.setEchoMode(QLineEdit.Password)
-        self.txt_senha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.txt_senha, 3, 1, 1, 2)
-
         self.cb_perfil = QComboBox(self.frame_5)
         self.cb_perfil.addItem("")
         self.cb_perfil.addItem("")
@@ -584,14 +596,7 @@ class Ui_MainWindow(object):
         sizePolicy2.setHeightForWidth(self.cb_perfil.sizePolicy().hasHeightForWidth())
         self.cb_perfil.setSizePolicy(sizePolicy2)
 
-        self.gridLayout_2.addWidget(self.cb_perfil, 5, 1, 1, 2)
-
-        self.txt_repeteSenha = QLineEdit(self.frame_5)
-        self.txt_repeteSenha.setObjectName(u"txt_repeteSenha")
-        self.txt_repeteSenha.setEchoMode(QLineEdit.Password)
-        self.txt_repeteSenha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.gridLayout_2.addWidget(self.txt_repeteSenha, 4, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.cb_perfil, 5, 1, 1, 1)
 
 
         self.verticalLayout_7.addWidget(self.frame_5)
@@ -723,6 +728,204 @@ class Ui_MainWindow(object):
         self.verticalLayout_15.addWidget(self.tabWidget_2)
 
         self.Pages.addWidget(self.pg_cadastro_usuarios)
+        self.pg_cadastro_produtos = QWidget()
+        self.pg_cadastro_produtos.setObjectName(u"pg_cadastro_produtos")
+        self.verticalLayout_20 = QVBoxLayout(self.pg_cadastro_produtos)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.tabWidget_3 = QTabWidget(self.pg_cadastro_produtos)
+        self.tabWidget_3.setObjectName(u"tabWidget_3")
+        self.tab_5 = QWidget()
+        self.tab_5.setObjectName(u"tab_5")
+        self.verticalLayout_21 = QVBoxLayout(self.tab_5)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.frame_7 = QFrame(self.tab_5)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setStyleSheet(u"QLineEdit{\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	font: 10pt \"MS Shell Dig 2\";\n"
+"}\n"
+"\n"
+"QFrame{\n"
+"	background-color: rgb(231, 231, 231);\n"
+"}")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.gridLayout_3 = QGridLayout(self.frame_7)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.label_14 = QLabel(self.frame_7)
+        self.label_14.setObjectName(u"label_14")
+        self.label_14.setStyleSheet(u"color: rgb(0, 99, 148);\n"
+"background-color: rgb(249, 249, 249);")
+
+        self.gridLayout_3.addWidget(self.label_14, 0, 0, 1, 3)
+
+        self.lbl_descricao = QLabel(self.frame_7)
+        self.lbl_descricao.setObjectName(u"lbl_descricao")
+        self.lbl_descricao.setStyleSheet(u"color: rgb(0, 0, 0);")
+
+        self.gridLayout_3.addWidget(self.lbl_descricao, 1, 0, 1, 2)
+
+        self.txt_descricao = QLineEdit(self.frame_7)
+        self.txt_descricao.setObjectName(u"txt_descricao")
+
+        self.gridLayout_3.addWidget(self.txt_descricao, 1, 2, 1, 1)
+
+        self.lbl_unidade = QLabel(self.frame_7)
+        self.lbl_unidade.setObjectName(u"lbl_unidade")
+        self.lbl_unidade.setStyleSheet(u"color: rgb(0, 0, 0);")
+
+        self.gridLayout_3.addWidget(self.lbl_unidade, 2, 0, 1, 2)
+
+        self.txt_unidade = QLineEdit(self.frame_7)
+        self.txt_unidade.setObjectName(u"txt_unidade")
+
+        self.gridLayout_3.addWidget(self.txt_unidade, 2, 2, 1, 1)
+
+        self.lbl_preco = QLabel(self.frame_7)
+        self.lbl_preco.setObjectName(u"lbl_preco")
+        self.lbl_preco.setStyleSheet(u"color: rgb(0, 0, 0);")
+
+        self.gridLayout_3.addWidget(self.lbl_preco, 3, 0, 1, 1)
+
+        self.txt_preco = QLineEdit(self.frame_7)
+        self.txt_preco.setObjectName(u"txt_preco")
+
+        self.gridLayout_3.addWidget(self.txt_preco, 3, 1, 1, 2)
+
+        self.label_15 = QLabel(self.frame_7)
+        self.label_15.setObjectName(u"label_15")
+        self.label_15.setStyleSheet(u"color: rgb(0, 0, 0);")
+
+        self.gridLayout_3.addWidget(self.label_15, 4, 0, 1, 2)
+
+        self.txt_estoque = QLineEdit(self.frame_7)
+        self.txt_estoque.setObjectName(u"txt_estoque")
+
+        self.gridLayout_3.addWidget(self.txt_estoque, 4, 2, 1, 1)
+
+
+        self.verticalLayout_21.addWidget(self.frame_7)
+
+        self.btn_cadastra_produto = QPushButton(self.tab_5)
+        self.btn_cadastra_produto.setObjectName(u"btn_cadastra_produto")
+        self.btn_cadastra_produto.setMinimumSize(QSize(160, 30))
+        self.btn_cadastra_produto.setFont(font2)
+        self.btn_cadastra_produto.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cadastra_produto.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(243, 243, 243);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	background-color: rgb(0, 170, 255);\n"
+"	color: rgb(243, 243, 243);\n"
+"	border-radius: 15px;\n"
+"}")
+
+        self.verticalLayout_21.addWidget(self.btn_cadastra_produto, 0, Qt.AlignHCenter)
+
+        self.tabWidget_3.addTab(self.tab_5, "")
+        self.tab_6 = QWidget()
+        self.tab_6.setObjectName(u"tab_6")
+        self.verticalLayout_23 = QVBoxLayout(self.tab_6)
+        self.verticalLayout_23.setObjectName(u"verticalLayout_23")
+        self.label_16 = QLabel(self.tab_6)
+        self.label_16.setObjectName(u"label_16")
+        self.label_16.setMinimumSize(QSize(0, 60))
+        self.label_16.setStyleSheet(u"color: rgb(0, 99, 148);\n"
+"background-color: rgb(249, 249, 249);")
+
+        self.verticalLayout_23.addWidget(self.label_16)
+
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.tb_product = QTableWidget(self.tab_6)
+        if (self.tb_product.columnCount() < 5):
+            self.tb_product.setColumnCount(5)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.tb_product.setHorizontalHeaderItem(0, __qtablewidgetitem16)
+        __qtablewidgetitem17 = QTableWidgetItem()
+        self.tb_product.setHorizontalHeaderItem(1, __qtablewidgetitem17)
+        __qtablewidgetitem18 = QTableWidgetItem()
+        self.tb_product.setHorizontalHeaderItem(2, __qtablewidgetitem18)
+        __qtablewidgetitem19 = QTableWidgetItem()
+        self.tb_product.setHorizontalHeaderItem(3, __qtablewidgetitem19)
+        __qtablewidgetitem20 = QTableWidgetItem()
+        self.tb_product.setHorizontalHeaderItem(4, __qtablewidgetitem20)
+        self.tb_product.setObjectName(u"tb_product")
+        self.tb_product.setStyleSheet(u"QHeaderView::section{\n"
+"	background-color: rgb(148, 148, 148);\n"
+"	color: rgb(255, 255, 255);\n"
+"	font: 10pt \"MS Shell Dig 2\";\n"
+"}\n"
+"\n"
+"QTableWidget{\n"
+"	background-color: rgb(252, 252, 252);\n"
+"}")
+
+        self.horizontalLayout_7.addWidget(self.tb_product)
+
+        self.frame_8 = QFrame(self.tab_6)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setStyleSheet(u"QPushButton{\n"
+"	border-radius: 15px;\n"
+"	background-color: rgb(255, 255, 255);\n"
+"	font: 11pt \"MS Shell Dig 2\";\n"
+"	color: rgb(0, 24, 74);\n"
+"}\n"
+"\n"
+"QFrame{\n"
+"	background-color: rgb(230, 230, 230);\n"
+"}")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_22 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.btn_excel_produto = QPushButton(self.frame_8)
+        self.btn_excel_produto.setObjectName(u"btn_excel_produto")
+        self.btn_excel_produto.setMinimumSize(QSize(90, 30))
+        self.btn_excel_produto.setStyleSheet(u"QPushButton:hover{\n"
+"	background-color: rgb(85, 85, 255);\n"
+"	color: #fff;\n"
+"}")
+
+        self.verticalLayout_22.addWidget(self.btn_excel_produto)
+
+        self.btn_alterar_produto = QPushButton(self.frame_8)
+        self.btn_alterar_produto.setObjectName(u"btn_alterar_produto")
+        self.btn_alterar_produto.setMinimumSize(QSize(90, 30))
+        self.btn_alterar_produto.setStyleSheet(u"QPushButton:hover{\n"
+"	background-color: rgb(255, 170, 0);\n"
+"	color: #fff;\n"
+"}")
+
+        self.verticalLayout_22.addWidget(self.btn_alterar_produto)
+
+        self.btn_excluir_produto = QPushButton(self.frame_8)
+        self.btn_excluir_produto.setObjectName(u"btn_excluir_produto")
+        self.btn_excluir_produto.setMinimumSize(QSize(90, 30))
+        self.btn_excluir_produto.setStyleSheet(u"QPushButton:hover{\n"
+"	background-color: rgb(199, 66, 0);\n"
+"	color: #fff;\n"
+"}")
+
+        self.verticalLayout_22.addWidget(self.btn_excluir_produto)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_22.addItem(self.verticalSpacer_4)
+
+
+        self.horizontalLayout_7.addWidget(self.frame_8)
+
+
+        self.verticalLayout_23.addLayout(self.horizontalLayout_7)
+
+        self.tabWidget_3.addTab(self.tab_6, "")
+
+        self.verticalLayout_20.addWidget(self.tabWidget_3)
+
+        self.Pages.addWidget(self.pg_cadastro_produtos)
         self.pg_contatos = QWidget()
         self.pg_contatos.setObjectName(u"pg_contatos")
         self.verticalLayout_14 = QVBoxLayout(self.pg_contatos)
@@ -812,8 +1015,9 @@ class Ui_MainWindow(object):
 
         self.toolBox.setCurrentIndex(0)
         self.Pages.setCurrentIndex(0)
-        self.tabWidget.setCurrentIndex(0)
-        self.tabWidget_2.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget_2.setCurrentIndex(1)
+        self.tabWidget_3.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -834,6 +1038,7 @@ class Ui_MainWindow(object):
         self.btn_pg_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
         self.btn_pg_empresas.setText(QCoreApplication.translate("MainWindow", u"Empresas", None))
         self.btn_pg_usuarios.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rios", None))
+        self.btn_pg_produtos.setText(QCoreApplication.translate("MainWindow", u"Produtos", None))
         self.btn_pg_contatos.setText(QCoreApplication.translate("MainWindow", u"Contatos", None))
         self.btn_pg_sobre.setText(QCoreApplication.translate("MainWindow", u"Sobre", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page1), QCoreApplication.translate("MainWindow", u"Menu", None))
@@ -883,19 +1088,19 @@ class Ui_MainWindow(object):
         self.btn_alterar_empresa.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_empresa.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Empresas", None))
-        self.lbl_nome.setText(QCoreApplication.translate("MainWindow", u"Nome:", None))
-        self.lbl_senha.setText(QCoreApplication.translate("MainWindow", u"Senha:", None))
         self.lbl_usuarios.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">USU\u00c1RIOS</span></p></body></html>", None))
-        self.txt_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
-        self.lbl_repeteSenha.setText(QCoreApplication.translate("MainWindow", u"Repete senha:", None))
+        self.lbl_nome.setText(QCoreApplication.translate("MainWindow", u"Nome:", None))
         self.txt_nomeUsuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome completo", None))
         self.lbl_usuario.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio:", None))
-        self.lbl_perfil.setText(QCoreApplication.translate("MainWindow", u"Perfil:", None))
+        self.txt_usuario.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
+        self.lbl_senha.setText(QCoreApplication.translate("MainWindow", u"Senha:", None))
         self.txt_senha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
+        self.lbl_repeteSenha.setText(QCoreApplication.translate("MainWindow", u"Repete senha:", None))
+        self.txt_repeteSenha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Repete senha", None))
+        self.lbl_perfil.setText(QCoreApplication.translate("MainWindow", u"Perfil:", None))
         self.cb_perfil.setItemText(0, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.cb_perfil.setItemText(1, QCoreApplication.translate("MainWindow", u"Administrador", None))
 
-        self.txt_repeteSenha.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Repete senha", None))
         self.btn_cadastrar_usuario.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Cadastro", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">USU\u00c1RIOS</span></p></body></html>", None))
@@ -913,6 +1118,32 @@ class Ui_MainWindow(object):
         self.btn_alterar_usuario.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_usuario.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.tabWidget_2.setTabText(self.tabWidget_2.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Usu\u00e1rios", None))
+        self.label_14.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">PRODUTOS</span></p></body></html>", None))
+        self.lbl_descricao.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o:", None))
+        self.txt_descricao.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o do produto", None))
+        self.lbl_unidade.setText(QCoreApplication.translate("MainWindow", u"Unidade:", None))
+        self.txt_unidade.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Unidade do produto", None))
+        self.lbl_preco.setText(QCoreApplication.translate("MainWindow", u"Pre\u00e7o:", None))
+        self.txt_preco.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pre\u00e7o do produto", None))
+        self.label_15.setText(QCoreApplication.translate("MainWindow", u"Estoque:", None))
+        self.txt_estoque.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Estoque do produto", None))
+        self.btn_cadastra_produto.setText(QCoreApplication.translate("MainWindow", u"Cadastrar", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_5), QCoreApplication.translate("MainWindow", u"Cadastro", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; font-weight:600;\">PRODUTOS</span></p></body></html>", None))
+        ___qtablewidgetitem16 = self.tb_product.horizontalHeaderItem(0)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"C\u00d3DIGO", None));
+        ___qtablewidgetitem17 = self.tb_product.horizontalHeaderItem(1)
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"DESCRI\u00c7\u00c3O", None));
+        ___qtablewidgetitem18 = self.tb_product.horizontalHeaderItem(2)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"UNIDADE", None));
+        ___qtablewidgetitem19 = self.tb_product.horizontalHeaderItem(3)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"PRE\u00c7O", None));
+        ___qtablewidgetitem20 = self.tb_product.horizontalHeaderItem(4)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"ESTOQUE", None));
+        self.btn_excel_produto.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_alterar_produto.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
+        self.btn_excluir_produto.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_6), QCoreApplication.translate("MainWindow", u"Produtos", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:16pt; font-weight:600;\">Contatos</span></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/whatsApp.png\"/><span style=\" font-size:18pt; vertical-align:super;\">(31)99398-8562</span></p></body></html>", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/email.png\"/><span style=\" font-size:20pt; vertical-align:super;\">pedrofcn01@hotmail.com</span></p></body></html>", None))

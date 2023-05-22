@@ -64,34 +64,38 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.btn_pg_home.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_home))
         self.btn_pg_empresas.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_empresas))
         self.btn_pg_usuarios.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_usuarios))
+        self.btn_pg_produtos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_cadastro_produtos))
         self.btn_pg_contatos.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_contatos))
         self.btn_pg_sobre.clicked.connect(lambda: self.Pages.setCurrentWidget(self.pg_sobre))
         ####################################################################################################
         #PREENCHER AUTOMATICAMENTE OS DADOS DO CNPJ
         self.txt_cnpj.editingFinished.connect(self.consultarApi)
         #########################################################
-        #CADASTRAR EMPRESA
+        #CADASTRAR EMPRESA, USUARIO, PRODUTO
         self.btn_cadastrar_empresa.clicked.connect(self.cadastrarEmpresa)
+        self.btn_cadastrar_usuario.clicked.connect(self.cadastrarUsuario)
+        self.btn_cadastra_produto.clicked.connect(self.cadastrarProduto)
         ##################################################################
-        #ATUALIZAR CADASTRO DE EMPRESAS E USUARIOS
+        #ATUALIZAR CADASTRO EMPRESAS, USUARIOS, PRODUTOS
         self.btn_alterar_empresa.clicked.connect(self.editarEmpresas)
         self.btn_alterar_usuario.clicked.connect(self.editarUsuarios)
-        ######################################################
-        #EXCLUIR CADASTRO DE EMPRESAS E USUARIOS
+
+        #############################################################
+        #EXCLUIR CADASTRO EMPRESAS, USUARIOS, PRODUTOS
         self.btn_excluir_empresa.clicked.connect(self.excluirEmpresa)
         self.btn_excluir_usuario.clicked.connect(self.excluirUsuarios)
+
         ##############################################################
-        #GERAR ARQUIVO EXCEL DE EMPRESAS E USUARIOS
+        #GERAR ARQUIVO EXCEL EMPRESAS, USUARIOS, PRODUTOS
         self.btn_excel_empresa.clicked.connect(self.excelEmpresas)
         self.btn_excel_usuario.clicked.connect(self.excelUsuarios)
-        ##################################################################
-        #PREENCHER A TABELA DE EMPRESAS E USUÁRIOS
+
+        ##########################################################
+        #PREENCHER TABELA EMPRESAS, USUÁRIOS, PRODUTOS
         self.tabelaEmpresas()
         self.tabelaUsuarios()
+        self.tabelaProdutos()
         ######################
-        #CADASTRAR USUÁRIOS
-        self.btn_cadastrar_usuario.clicked.connect(self.cadastrarUsuario)
-        ##################################################################
 
     def menuAnimado(self):
         width = self.left_menu.width()
@@ -142,13 +146,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db = DataBase()
         db.connect()
         resultado = db.selecAllUsers()
-
         self.tb_users.clearContents()
         self.tb_users.setRowCount(len(resultado))
 
         for linha, texto in enumerate(resultado):
             for coluna, dado in enumerate(texto):
                 self.tb_users.setItem(linha, coluna, QTableWidgetItem(str(dado)))
+
         db.closeConnection()
 
     def editarUsuarios(self):
@@ -254,13 +258,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         db = DataBase()
         db.connect()
         resultado = db.selectAllCampanies()
-
         self.tb_company.clearContents()
         self.tb_company.setRowCount(len(resultado))
 
         for linha, texto in enumerate(resultado):
             for coluna, dado in enumerate(texto):
                 self.tb_company.setItem(linha, coluna, QTableWidgetItem(str(dado)))
+
         db.closeConnection()
 
     def editarEmpresas(self):
@@ -348,13 +352,48 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             msg.setText('Relatório Excel gerado com sucesso!')
             msg.exec()
 
+    def cadastrarProduto(self):
+        descricao = self.txt_descricao.text()
+        unidade = self.txt_unidade.text()
+        preco = self.txt_preco.text()
+        estoque = self.txt_estoque.text()
 
+        db = DataBase()
+        db.connect()
+        db.insertProdutct(descricao, unidade, preco, estoque)
+        db.closeConnection()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle('Cadastro de Produto')
+        msg.setText('Produto cadastrado com sucesso!')
+        msg.exec()
+
+        self.txt_descricao.setText('')
+        self.txt_unidade.setText('')
+        self.txt_preco.setText('')
+        self.txt_estoque.setText('')
+        self.tabelaProdutos()
+
+    def tabelaProdutos(self):
+        db = DataBase()
+        db.connect()
+        resultado = db.selectAllProducts()
+        self.tb_product.clearContents()
+        self.tb_product.setRowCount(len(resultado))
+
+        for linha, texto in enumerate(resultado):
+            for coluna, dado in enumerate(texto):
+                self.tb_product.setItem(linha, coluna, QTableWidgetItem(str(dado)))
+
+        db.closeConnection()
 
 if __name__ == '__main__':
     db = DataBase()
     db.connect()
     db.createTableUsers()
     db.createTableCompanies()
+    db.createTableProducts()
     db.closeConnection()
 
     app = QApplication(sys.argv)
