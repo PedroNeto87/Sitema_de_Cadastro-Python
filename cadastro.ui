@@ -339,7 +339,7 @@ QPushButton:hover{
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>182</width>
+                 <width>150</width>
                  <height>436</height>
                 </rect>
                </property>
@@ -1665,7 +1665,7 @@ background-color: rgb(65, 65, 65);</string>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_9">
+                   <widget class="QLabel" name="lbl_github">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
@@ -1675,10 +1675,13 @@ background-color: rgb(65, 65, 65);</string>
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/PedroNeto87&quot;&gt;&lt;span style=&quot; font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;&quot;&gt;https://github.com/PedroNeto87&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                     </property>
+                    <property name="openExternalLinks">
+                     <bool>true</bool>
+                    </property>
                    </widget>
                   </item>
                   <item>
-                   <widget class="QLabel" name="label_10">
+                   <widget class="QLabel" name="lbl_linkedin">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
@@ -1687,6 +1690,9 @@ background-color: rgb(65, 65, 65);</string>
                     </property>
                     <property name="text">
                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.linkedin.com/in/pedro-ferreira-cunha-neto/&quot;&gt;&lt;span style=&quot; font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;&quot;&gt;https://www.linkedin.com/in/pedro-ferreira-cunha-neto/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                    </property>
+                    <property name="openExternalLinks">
+                     <bool>true</bool>
                     </property>
                    </widget>
                   </item>

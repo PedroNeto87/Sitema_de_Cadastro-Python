@@ -171,7 +171,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page1, u"Menu")
         self.page2 = QWidget()
         self.page2.setObjectName(u"page2")
-        self.page2.setGeometry(QRect(0, 0, 182, 436))
+        self.page2.setGeometry(QRect(0, 0, 150, 436))
         self.verticalLayout_6 = QVBoxLayout(self.page2)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -952,17 +952,19 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_13.addWidget(self.label_8)
 
-        self.label_9 = QLabel(self.pg_contatos)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setMaximumSize(QSize(16777215, 20))
+        self.lbl_github = QLabel(self.pg_contatos)
+        self.lbl_github.setObjectName(u"lbl_github")
+        self.lbl_github.setMaximumSize(QSize(16777215, 20))
+        self.lbl_github.setOpenExternalLinks(True)
 
-        self.verticalLayout_13.addWidget(self.label_9)
+        self.verticalLayout_13.addWidget(self.lbl_github)
 
-        self.label_10 = QLabel(self.pg_contatos)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(16777215, 20))
+        self.lbl_linkedin = QLabel(self.pg_contatos)
+        self.lbl_linkedin.setObjectName(u"lbl_linkedin")
+        self.lbl_linkedin.setMaximumSize(QSize(16777215, 20))
+        self.lbl_linkedin.setOpenExternalLinks(True)
 
-        self.verticalLayout_13.addWidget(self.label_10)
+        self.verticalLayout_13.addWidget(self.lbl_linkedin)
 
 
         self.verticalLayout_14.addLayout(self.verticalLayout_13)
@@ -1152,8 +1154,8 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/contato.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">Contatos</span></p></body></html>", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:18pt; vertical-align:super;\">(31)99398-8562</span></p></body></html>", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:20pt; vertical-align:super;\">pedrofcn01@hotmail.com</span></p></body></html>", None))
-        self.label_9.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><a href=\"https://github.com/PedroNeto87\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://github.com/PedroNeto87</span></a></p></body></html>", None))
-        self.label_10.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><a href=\"https://www.linkedin.com/in/pedro-ferreira-cunha-neto/\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://www.linkedin.com/in/pedro-ferreira-cunha-neto/</span></a></p></body></html>", None))
+        self.lbl_github.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><a href=\"https://github.com/PedroNeto87\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://github.com/PedroNeto87</span></a></p></body></html>", None))
+        self.lbl_linkedin.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><a href=\"https://www.linkedin.com/in/pedro-ferreira-cunha-neto/\"><span style=\" font-size:20pt; text-decoration: underline; color:#ffffff; vertical-align:super;\">https://www.linkedin.com/in/pedro-ferreira-cunha-neto/</span></a></p></body></html>", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><img src=\":/icons/icons/sobre.png\"/><span style=\" font-size:48pt; font-weight:600; vertical-align:super;\">Sobre</span></p></body></html>", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:14pt;\">Este sistema realiza cadastro de empresas com base na consulta do CNPJ utilizando API da Receita Federal, faz tamb\u00e9m cadastro de usu\u00e1rios e produtos e armazena em um banco de dados SQLITE3.</span></p><p><span style=\" font-size:14pt;\">Tamb\u00e9m gera arquivo em formato .XLSX(Excel) com as informa\u00e7\u00f5es cadastradas no sistema.</span></p></body></html>", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:7pt;\">\u00a9 Pedro_Neto 2023</span></p></body></html>", None))

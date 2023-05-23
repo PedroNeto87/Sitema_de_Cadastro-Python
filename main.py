@@ -2,7 +2,8 @@ import sys
 import pandas as pd
 import sqlite3
 import os
-from PySide6 import QtCore 
+from PySide6 import QtCore
+from PySide6.QtCore import QSize
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QTableWidgetItem, QWidget)
 from ui_login import Ui_Login
@@ -19,6 +20,8 @@ class Login(QWidget, Ui_Login):
         self.setWindowTitle('Login do Sistema')
         appIcon = QIcon(u'icons/logo.png')
         self.setWindowIcon(appIcon)
+        self.setFixedSize(QSize(431, 452))
+        
 
         self.btn_login.clicked.connect(self.checkLogin)
 
@@ -48,7 +51,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, user) -> None:
         super(MainWindow, self).__init__()
         self.setupUi(self)
-        self.setWindowTitle('Sistema de Cadastro')
+        self.setWindowTitle('Sistema de Cadastros')
         appIcon = QIcon(u'icons/logo.png')
         self.setWindowIcon(appIcon)
 
