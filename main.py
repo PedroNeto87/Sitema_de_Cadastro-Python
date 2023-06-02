@@ -20,7 +20,8 @@ class Login(QWidget, Ui_Login):
         self.setWindowTitle('Login do Sistema')
         appIcon = QIcon(u'icons/logo.png')
         self.setWindowIcon(appIcon)
-        self.setFixedSize(QSize(431, 452))
+        self.setFixedSize(QSize(411, 451))
+        
         
 
         self.btn_login.clicked.connect(self.checkLogin)
@@ -28,7 +29,7 @@ class Login(QWidget, Ui_Login):
     def checkLogin(self):
         self.user = DataBase()
         self.user.connect()
-        autenticado = self.user.checkUser(self.txt_user.text().upper(), self.txt_password.text())
+        autenticado = self.user.checkUserPassword(self.txt_user.text().upper(), self.txt_password.text())
 
         if autenticado == 'Administrador' or autenticado == 'Usuario':
             self.w = MainWindow(autenticado)

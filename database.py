@@ -26,6 +26,8 @@ class DataBase:
                 ACCESS TEXT NOT NULL
                 );
             """)
+            cursor.execute("""INSERT INTO Usuarios (NAME, USER, PASSWORD, ACCESS) SELECT 'Administrador', 'admin', '123', 'Administrador' WHERE NOT EXISTS (SELECT 1 FROM Usuarios WHERE USER = 'admin')""")
+            self.connection.commit()
         except AttributeError:
             print('Faça a conexão')
 
@@ -71,7 +73,7 @@ class DataBase:
         except:
             return("Erro ao excluir registro!")
 
-    def checkUser(self, user, password):
+    def checkUserPassword(self, user, password):
         cursor = self.connection.cursor()
         try:
             cursor.execute("""SELECT * FROM Usuarios""")

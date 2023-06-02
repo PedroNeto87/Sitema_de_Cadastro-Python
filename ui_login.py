@@ -17,16 +17,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QLabel, QLineEdit,
     QPushButton, QSizePolicy, QWidget)
+import icons_rc
 
 class Ui_Login(object):
     def setupUi(self, Login):
         if not Login.objectName():
             Login.setObjectName(u"Login")
-        Login.resize(431, 452)
+        Login.resize(411, 451)
         Login.setStyleSheet(u"background-color: rgb(12, 12, 12);")
         self.frame = QFrame(Login)
         self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(30, 20, 371, 411))
+        self.frame.setGeometry(QRect(20, 20, 371, 411))
         self.frame.setStyleSheet(u"background-color: rgba(65, 65, 65, 0.2);")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
@@ -66,8 +67,7 @@ class Ui_Login(object):
         self.btn_login.setFlat(False)
         self.label = QLabel(Login)
         self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(123, 40, 181, 161))
-        self.label.setPixmap(QPixmap(u"icons/icon_login.png"))
+        self.label.setGeometry(QRect(113, 40, 181, 161))
         self.label.setScaledContents(True)
         self.label.raise_()
         self.frame.raise_()
@@ -93,6 +93,6 @@ class Ui_Login(object):
 #if QT_CONFIG(statustip)
         self.label.setStatusTip("")
 #endif // QT_CONFIG(statustip)
-        self.label.setText("")
+        self.label.setText(QCoreApplication.translate("Login", u"<html><head/><body><p align=\"center\"><img src=\":/icons/icons/icon_login.png\"/></p></body></html>", None))
     # retranslateUi
 

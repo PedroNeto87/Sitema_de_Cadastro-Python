@@ -171,7 +171,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page1, u"Menu")
         self.page2 = QWidget()
         self.page2.setObjectName(u"page2")
-        self.page2.setGeometry(QRect(0, 0, 150, 436))
+        self.page2.setGeometry(QRect(0, 0, 132, 157))
         self.verticalLayout_6 = QVBoxLayout(self.page2)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -559,6 +559,7 @@ class Ui_MainWindow(object):
 
         self.txt_senha = QLineEdit(self.frame_5)
         self.txt_senha.setObjectName(u"txt_senha")
+        self.txt_senha.setEchoMode(QLineEdit.Password)
         self.txt_senha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.gridLayout_2.addWidget(self.txt_senha, 3, 1, 1, 1)
@@ -571,6 +572,7 @@ class Ui_MainWindow(object):
 
         self.txt_repeteSenha = QLineEdit(self.frame_5)
         self.txt_repeteSenha.setObjectName(u"txt_repeteSenha")
+        self.txt_repeteSenha.setEchoMode(QLineEdit.Password)
         self.txt_repeteSenha.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.gridLayout_2.addWidget(self.txt_repeteSenha, 4, 1, 1, 1)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>431</width>
-    <height>452</height>
+    <width>411</width>
+    <height>451</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>20</x>
      <y>20</y>
      <width>371</width>
      <height>411</height>
@@ -132,7 +132,7 @@ QPushButton:hover{
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>123</x>
+     <x>113</x>
      <y>40</y>
      <width>181</width>
      <height>161</height>
@@ -145,10 +145,7 @@ QPushButton:hover{
     <string/>
    </property>
    <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>icons/icon_login.png</pixmap>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;:/icons/icons/icon_login.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -162,6 +159,8 @@ QPushButton:hover{
   <tabstop>txt_password</tabstop>
   <tabstop>btn_login</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections/>
 </ui>
